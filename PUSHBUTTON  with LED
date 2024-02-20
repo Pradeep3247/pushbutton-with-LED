@@ -1,0 +1,26 @@
+#define button 23 
+#define LED 22
+int value = 0;
+
+void setup() 
+{
+  
+  pinMode(button,INPUT);
+  pinMode(LED,OUTPUT);
+  Serial.begin(115200);
+}
+void loop()
+{ 
+value = digitalRead(button);
+Serial.print("Button Status");
+Serial.println(value);
+if (value == HIGH)
+{ 
+  digitalWrite(LED,HIGH);
+  delay(1000);
+} 
+else { 
+  digitalWrite(LED,LOW);
+  delay(1000);
+  }
+}
